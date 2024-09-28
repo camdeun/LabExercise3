@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 Exercise 3</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; }
+        .container { display: flex; min-height: 100vh; align-items: stretch; }
+        .column { background: goldenrod; display: flex; flex-direction: column; justify-content: center; align-items: center; flex: 1; padding: 20px; }
+        .column img { max-width: 100%; height: auto; border-radius: 10px; }
+        .button { margin-top: 20px; padding: 10px 20px; background-color: teal; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .button:hover { background-color: darkcyan; }
+        .input-text { margin-top: 10px; padding: 8px; border: 2px solid #ccc; border-radius: 5px; font-size: 16px; width: 80%; max-width: 300px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column" id="column1">
+            <h1 id="heading1">Hello</h1>
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image 1">
+            <input type="text" id="textField1" class="input-text" placeholder="Enter new heading for Column 1">
+            <button class="button" onclick="changeColumn1()">Change Me</button>
+        </div>
+        <div class="column" id="column2">
+            <h1 id="heading2">World</h1>
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image 2">
+            <input type="text" id="textField2" class="input-text" placeholder="Enter new heading for Column 2">
+            <button class="button" onclick="changeColumn2()">Change Me</button>
+        </div>
+    </div>
+    <script>
+        function changeColumn1() {
+            const newText = document.getElementById('textField1').value;
+            if (newText.trim()) {
+                document.getElementById('heading1').textContent = newText;
+            }
+            document.getElementById('column1').style.backgroundColor = 'lightcoral';
+        }
+
+        function changeColumn2() {
+            const newText = document.getElementById('textField2').value;
+            if (newText.trim()) {
+                document.getElementById('heading2').textContent = newText;
+            }
+            document.getElementById('column2').style.backgroundColor = 'lightblue';
+        }
+    </script>
+</body>
+</html>
